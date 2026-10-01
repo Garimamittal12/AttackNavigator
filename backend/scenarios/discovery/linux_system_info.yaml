@@ -1,0 +1,15 @@
+id: DISCOVERY_LINUX_001
+name: Linux System Information Discovery
+description: Runs uname -a on a Linux lab agent and relies on auditd EXECVE telemetry.
+platform: linux
+tactic: Discovery
+techniques: [T1082]
+expected_telemetry: Linux auditd EXECVE record for uname
+expected_event_types: [process_creation]
+detection_rules: [DET-LINUX-UNAME-001]
+prerequisites: [auditd installed, execve audit rule installed, agent can run ausearch]
+safety_notes: Read-only local system information query only.
+cleanup: No cleanup required.
+implementation_status: implemented
+telemetry_verified: false
+detection_verified: false

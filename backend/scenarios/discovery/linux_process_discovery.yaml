@@ -1,0 +1,15 @@
+id: DISCOVERY_LINUX_002
+name: Linux Process Discovery
+description: Runs ps -ef on a Linux lab agent and relies on auditd EXECVE telemetry.
+platform: linux
+tactic: Discovery
+techniques: [T1057]
+expected_telemetry: Linux auditd EXECVE record for ps
+expected_event_types: [process_creation]
+detection_rules: [DET-LINUX-PS-001]
+prerequisites: [auditd installed, execve audit rule installed, agent can run ausearch]
+safety_notes: Read-only local process listing only.
+cleanup: No cleanup required.
+implementation_status: implemented
+telemetry_verified: false
+detection_verified: false

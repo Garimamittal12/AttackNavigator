@@ -1,0 +1,21 @@
+id: DET-LINUX-UNAME-001
+name: Linux System Information Discovery
+description: Detects an audited uname execution.
+enabled: true
+platforms: [linux]
+event_types: [process_creation]
+conditions: {process: {equals: uname}}
+severity: LOW
+mitre: {technique: T1082, tactic: Discovery}
+explanation: auditd recorded uname execution.
+---
+id: DET-LINUX-PS-001
+name: Linux Process Discovery
+description: Detects an audited ps execution.
+enabled: true
+platforms: [linux]
+event_types: [process_creation]
+conditions: {process: {equals: ps}}
+severity: LOW
+mitre: {technique: T1057, tactic: Discovery}
+explanation: auditd recorded ps execution.

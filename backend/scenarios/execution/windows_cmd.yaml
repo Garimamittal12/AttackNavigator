@@ -1,0 +1,15 @@
+id: CMD_001
+name: Windows Command Shell Activity
+description: Runs a benign fixed cmd.exe version query on a Windows lab agent.
+platform: windows
+tactic: Execution
+techniques: [T1059.003]
+expected_telemetry: Sysmon Operational Event ID 1
+expected_event_types: [process_creation]
+detection_rules: [DET-CMD-001]
+prerequisites: [Sysmon Event ID 1 enabled]
+safety_notes: Read-only local version query only.
+cleanup: No cleanup required.
+implementation_status: implemented
+telemetry_verified: false
+detection_verified: false

@@ -1,0 +1,15 @@
+id: POWERSHELL_001
+name: PowerShell Activity
+description: Runs a benign, fixed non-interactive PowerShell command on a Windows lab agent.
+platform: windows
+tactic: Execution
+techniques: [T1059.001]
+expected_telemetry: Sysmon Operational Event ID 1
+expected_event_types: [process_creation]
+detection_rules: [DET-PS-001]
+prerequisites: [Sysmon Event ID 1 enabled, agent can read Sysmon Operational log]
+safety_notes: No download, credential access, persistence, or network activity.
+cleanup: No cleanup required.
+implementation_status: implemented
+telemetry_verified: false
+detection_verified: false

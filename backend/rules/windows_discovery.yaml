@@ -1,0 +1,21 @@
+id: DET-SYSTEMINFO-001
+name: Windows System Information Discovery
+description: Detects systeminfo.exe process creation.
+enabled: true
+platforms: [windows]
+event_types: [process_creation]
+conditions: {process: {equals: systeminfo.exe}}
+severity: LOW
+mitre: {technique: T1082, tactic: Discovery}
+explanation: Sysmon recorded the built-in systeminfo utility.
+---
+id: DET-TASKLIST-001
+name: Windows Process Discovery
+description: Detects tasklist.exe process creation.
+enabled: true
+platforms: [windows]
+event_types: [process_creation]
+conditions: {process: {equals: tasklist.exe}}
+severity: LOW
+mitre: {technique: T1057, tactic: Discovery}
+explanation: Sysmon recorded the built-in tasklist utility.

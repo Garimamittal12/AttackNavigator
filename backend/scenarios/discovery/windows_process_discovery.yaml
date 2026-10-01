@@ -1,0 +1,15 @@
+id: DISCOVERY_WIN_002
+name: Windows Process Discovery
+description: Runs the built-in tasklist utility on a Windows lab agent.
+platform: windows
+tactic: Discovery
+techniques: [T1057]
+expected_telemetry: Sysmon Operational Event ID 1
+expected_event_types: [process_creation]
+detection_rules: [DET-TASKLIST-001]
+prerequisites: [Sysmon Event ID 1 enabled]
+safety_notes: Local read-only process listing only.
+cleanup: No cleanup required.
+implementation_status: implemented
+telemetry_verified: false
+detection_verified: false

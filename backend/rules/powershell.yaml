@@ -1,0 +1,14 @@
+id: DET-PS-001
+name: PowerShell Activity
+description: Detects PowerShell process creation recorded by Sysmon.
+enabled: true
+platforms: [windows]
+event_types: [process_creation]
+conditions:
+  process:
+    equals: powershell.exe
+mitre:
+  technique: T1059.001
+  tactic: Execution
+severity: HIGH
+explanation: Sysmon recorded powershell.exe as the created process.
