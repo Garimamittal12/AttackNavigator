@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: theme('colors.base.700');
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-base-950 text-gray-200;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  ::selection {
+    @apply bg-accent-500/30 text-accent-100;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-base-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-base-600 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-base-500;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-base-850 border border-base-700 rounded-lg;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-200 hover:border-base-600 hover:bg-base-800;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2 rounded-md text-sm text-gray-400
+           transition-colors duration-150 hover:text-gray-200 hover:bg-base-800
+           cursor-pointer;
+  }
+
+  .sidebar-link-active {
+    @apply text-accent-300 bg-accent-500/10 border-l-2 border-accent-400;
+  }
+
+  .input-field {
+    @apply w-full bg-base-900 border border-base-700 rounded-md px-3 py-2 text-sm text-gray-200
+           placeholder-gray-500 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500/30
+           transition-colors;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium
+           bg-accent-600 text-white hover:bg-accent-500 active:bg-accent-700
+           transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium
+           bg-base-700 text-gray-200 hover:bg-base-600 active:bg-base-600
+           transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium
+           bg-danger-600 text-white hover:bg-danger-500 active:bg-danger-700
+           transition-colors;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-sm
+           text-gray-400 hover:text-gray-200 hover:bg-base-800
+           transition-colors;
+  }
+
+  .table-header {
+    @apply px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+  }
+
+  .table-row {
+    @apply border-b border-base-800 hover:bg-base-800/50 transition-colors;
+  }
+
+  .table-cell {
+    @apply px-4 py-3 text-sm text-gray-300;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+  @apply text-xs;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold text-gray-100;
+  }
+
+  .subsection-title {
+    @apply text-sm font-medium text-gray-400 uppercase tracking-wider;
+  }
+
+  .tooltip-trigger {
+    @apply cursor-help border-b border-dashed border-gray-600;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

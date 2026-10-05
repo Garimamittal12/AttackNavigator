@@ -13,7 +13,9 @@ AttackNavigator is a controlled Purple-Team laboratory, not an attack framework 
 
 ## Run the host
 
-Install Python 3.11+ and Node 20+. Copy `.env.example` to `.env`, choose a strong agent token, and export the values (or use your environment loader). From `backend`, run `python -m pip install -r requirements.txt` and `uvicorn app.main:app --reload --port 8000`. From `frontend`, run `npm install` and `npm run dev`.
+Install Python 3.11+ and Node 20+. Copy `.env.example` to `.env`, choose a strong agent token, and export the values (or use your environment loader). From `backend`, run `py -3 -m pip install -r requirements.txt` and `py -3 -m uvicorn app.main:app --host 0.0.0.0 --port 8000`. From `frontend`, run `npm install` and `npm run dev`.
+
+Open the Vite URL shown in the terminal (normally `http://localhost:5173`). For an agent on a VM, set `ATTACKNAVIGATOR_API_URL` to the host-only IP of the backend, for example `http://192.168.56.1:8000/api`; do not leave the placeholder hostname in the agent source. The dashboard polls persisted API data every five seconds while its tab is visible.
 
 The dashboard is intentionally empty until a real agent connects. See the [scenario catalog](docs/scenarios.md), [Windows guide](docs/windows-setup.md), [Linux guide](docs/linux-setup.md), [testing guide](docs/testing.md), and [architecture](docs/architecture.md). VM integration remains to be verified in the configured lab.
 
